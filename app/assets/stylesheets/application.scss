@@ -17,6 +17,24 @@
  @import "bootstrap";
  
 
+ .main-h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 4em;
+  font-weight: bolder;
+  padding-bottom: 0px;
+  padding-top: 5px;
+  -webkit-text-stroke: 1.5px rgb(255, 254, 254);
+}
+
+.main-h2 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 2.75em;
+  font-weight: bold;
+  padding-bottom: 0px;
+}
+
  body {
     background-color: #F5F5F1;
     color: #333333;
@@ -63,19 +81,6 @@
 .sold-by {
   padding-bottom: 10px;
 }
-
- 
-.btn-custom {
-  color: darken(#bba651, 5%);
-  background-color: #fff;
-  border: 1px solid darken(#61531b, 5%);
-  padding: 8px 20px;
-  border-radius: 5px;
-  font-family: 'Ubuntu', sans-serif;
-  &:hover {
-      text-decoration: none;
-      background-color: darken(#2b2408, 5%);
-      color: #fff;
-      transition: 0.5s;
-  }
+.jumbotron {
+  background-image: url('banner-4.jpeg');
 }
