@@ -14,10 +14,10 @@
       <td><%= listing.description %></td>
       <td><%= number_to_currency(listing.price) %></td>
       <td>
-        <div class = "btn- list">
+        <div class = "btn-list">
         <%= link_to "View", listing, class: "btn btn-default" %>
         <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-default"  %>
-        <%= link_to 'Destroy', listing, method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-default" %>
+        <%= link_to 'Delete', listing, method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-default" %>
         </div>
       </td>
     </tr>
