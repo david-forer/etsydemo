@@ -7,6 +7,7 @@ end
 
 
 gem "figaro"
+gem 'jquery-turbolinks', '~> 2.1'
 gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
@@ -20,7 +21,7 @@ gem 'jquery-rails'
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'stripe'
-gem 'jquery-turbolinks', '~> 2.1'
+
 
 group :development, :test do
 
