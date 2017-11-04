@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031112543) do
+ActiveRecord::Schema.define(version: 20171104001907) do
 
   create_table "listings", force: :cascade do |t|
     t.string "name"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 20171031112543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.boolean "Breeder", default: false
+    t.string "breeder_name"
+    t.string "street_address"
+    t.string "suburb"
+    t.string "state"
+    t.text "clubs"
+    t.text "description"
+    t.string "next_litter"
+    t.string "breeder_id"
+    t.string "website"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
