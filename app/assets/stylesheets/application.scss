@@ -43,7 +43,9 @@
     font-family: Arial, Helvetica, sans-serif;
   }
  .navbar-default {
-    background-color: #EFEFEB;
+    background-color: #e7e7e7;
+    opacity: 0.9;
+    margin-bottom: 0px;
   }
  .navbar-default .navbar-brand {
     font-family: guardian-egyptt, georgia, serif;
@@ -60,10 +62,11 @@
 
  .center {
     text-align: center;
+    padding-top: 20px;
   }
 
  .container-footer {
-     padding-top: 25px;
+    padding-top: 25px;
  }
 
  .col-md-3:nth-child(4n+1) {
@@ -83,7 +86,51 @@
 .sold-by {
   padding-bottom: 10px;
 }
-.jumbotron {
-  background-image: url('puppies2.jpg');
-  min-height: 500px;
-} 
+.ddefr {
+  background-image: url('https://static.pexels.com/photos/374906/pexels-photo-374906.jpeg');
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  min-height:800px;
+  
+}
+
+.P-listings {
+  background-image: url('find-puppies-4.jpg');
+  background-repeat: no repeat;
+  min-height: 300px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 4em;
+  font-weight: bolder;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  text-shadow: 2px 2px 15px #fdfdfd;
+}
+
+.row-1 { 
+  margin: 20px;
+  padding-bottom: 20px;
+}
+
+.card {
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 6px rgb(121, 114, 114);
+  padding: 1.5em 1.25em;
+  min-height: 400px;
+  margin-bottom: 40px;
+  }
+
+  .carousel-example {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+
+  }
+
+  .middle {
+    font-weight: bolder;
+    padding-bottom: 50px;
+    font-size: 3em;
+  }

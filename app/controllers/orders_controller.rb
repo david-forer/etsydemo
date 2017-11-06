@@ -37,7 +37,6 @@ class OrdersController < ApplicationController
         :currency => "aud",
         :description => "Charge for your new puppy",
         :source => token,
-        :customer => customer.id,
         )
       flash[:notice] = "Thanks for ordering!"
     rescue Stripe::CardError => e

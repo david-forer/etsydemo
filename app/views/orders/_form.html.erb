@@ -8,7 +8,7 @@
   </div>
 
   <div class="col-md-8">
-    <%= form_with(model: [@listing, @order], id: "new_order", class: "new_order") do |form| %>
+    <%= form_with(model:[@listing, @order], local: true) do |form| %>
       <% if order.errors.any? %>
         <div id="error_explanation" class="alert alert-danger alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

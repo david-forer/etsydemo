@@ -1,6 +1,9 @@
+<div class = "col-md-6 col-md-offset-3">
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
   <%= devise_error_messages! %>
 
   <div class="form-group">
@@ -35,6 +38,57 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
+  <p> *****************  This is where I need authorization to see next part ************************ </p>
+
+  <div class="form-group">
+    <%= f.label "breeder name" %>
+    <%= f.text_field :breeder_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :street %>
+    <%= f.text_field :street_address, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :suburb %>
+    <%= f.text_field :suburb, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :state %>
+    <%= f.text_field :state, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :clubs %>
+    <%= f.text_area :clubs, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "next litter" %>
+    <%= f.text_field :next_litter, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "state breeder id" %>
+    <%= f.text_field :breeder_id, class: "form-control" %>
+  </div>
+<div class="form-group">
+    <%= f.label :website %>
+    <%= f.text_field :website, class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, id: :image, class: "form-control" %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Update", class: "btn btn-primary" %>
@@ -45,4 +99,7 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
+
 <%= link_to "Back", :back %>
+
+</div>

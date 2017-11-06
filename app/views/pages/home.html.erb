@@ -1,0 +1,54 @@
+<div class="ddefr">
+  <div class="container">
+  <h2 class = "main-h1">Find a Puppy</h2>
+  <h2 class = "center"><%= form_tag(listings_path, :method => "get",  id: "search-form") do %>
+  
+  <%= text_field_tag :search, params[:search], placeholder: "what type?" %>
+  
+  <%= submit_tag "Search", class: 'btn btn-default' %>
+<% end %></h4>
+</div>
+</div>
+<div class="container">
+    <div class="row">
+          <div class="col-md-6">
+            <h2 class = 'center'><b>Puppies</b></h2>
+            <br>
+            <p>Awful day at the office? Bad blind date? Or annoyed for no reason? (It happens!) Dog owners know that it just takes one sloppy wet kiss from your furry BFF to turn that frown upside down. It’s even a scientific fact that pets make us happier. And aside from putting smiles on our faces, it turns out pets have the ability to make us healthier.</p>
+           <p class = "center"><%= link_to 'View Puppies', listings_path, class: "btn btn-default"  %></p>
+          </div>
+          <div class="col-md-6">
+            <h2 class = 'center'><b>Breeders</b></h2>
+            <br>
+            <p>We need breeders of purebred dogs today. People who breed to preserve dog breeds are usually hobbyists. They may participate in dog shows or companion/performance events with their dogs. The dogs that they can’t keep are usually placed in pet homes. Yet cities and state legislatures are passing laws that can make it virtually impossible for smaller breeders to continue this important work. </p>
+            <p class = "center"><%= link_to 'View Breeders', users_path, class: "btn btn-default"  %></p>
+          </div>
+    </div>
+        <hr>
+</div>
+           <div class = "container"> 
+           <h1 class = "center middle">The Top Three reasons to get a Puppy!</h1>
+           <div>
+
+
+               <div class="row-1">
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <H1 class="center"> Reason #1</h1>
+                       <p>Pet therapy, or animal-assisted therapy (AAT) as it’s also called, has been linked to the reduction of anxiety, pain, and depression in people with a range of mental or physical health problems. Many people can benefit from pet therapy, including patients undergoing chemotherapy, veterans with post-traumatic stress disorder, and physical therapy patients working on their fine motor skills. Even some academic institutions are taking note. At Miami University, students can take advantage of pet therapy that alleviates feelings of homesickness and depression. Dogs are on call during midterms and finals when those feelings are at an all-time high. </p> 
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <H1 class="center"> Reason #2</h1>
+                        <p>Just petting a dog may be enough to keep that pesky cold away. One study conducted on college students reported benefits to overall health, particularly to the immune system of those students who were asked to pet dogs (as opposed to those asked to pet stuffed animals or nothing at all) . So next time you feel the sniffles coming, reach for the tissues—and your trusty sidekick. </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <H1 class="center"> Reason #3</h1>
+                        <p>Rejection can sting, but it eases off when you’re greeted with a wagging tail. And science confirms pets help our sense of belonging. One study found that pet owners reported having higher self-esteem, felt more conscientious, and even bounced back from social rejection better . Another study revealed that women and single adults found the most benefit of mental well-being from owning a dog . No wonder dogs are considered man’s best friend (and woman’s too!). </p>
+                        </div>
+                    </div>
+                </div>
+

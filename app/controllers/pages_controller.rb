@@ -4,4 +4,13 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def puppies
+  end
+
+  def breeders
+  end
+
+  def home
+  end
 end
