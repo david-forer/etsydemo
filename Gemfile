@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'stripe'
+gem 'searchkick'
 
 
 group :development, :test do

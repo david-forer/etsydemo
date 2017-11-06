@@ -1,11 +1,11 @@
 <div class="ddefr">
   <div class="container">
   <h2 class = "main-h1">Find a Puppy</h2>
-  <h2 class = "center"><%= form_tag(listings_path, :method => "get",  id: "search-form") do %>
-  
-  <%= text_field_tag :search, params[:search], placeholder: "what type?" %>
-  
-  <%= submit_tag "Search", class: 'btn btn-default' %>
+  <h2 class = "center"><%= form_tag search_listings_path, method: :get, class: "form-inline" do %>
+  <p>
+  <%= text_field_tag :search, params[:search], class: "form-control" %>
+  <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+  </p>
 <% end %></h4>
 </div>
 </div>

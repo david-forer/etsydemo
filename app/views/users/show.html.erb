@@ -1,7 +1,19 @@
+<div class = "container breeder">
+
 <div class="row">
   <div class="col-md-6">
 <!--Image will be displayed here -->
-<%= image_tag @user.image.url(:large) %>
+
+    <%= image_tag @user.image.url(:large) %>
+    <br>
+    <br>
+    <iframe
+      width="500"
+      height="300"
+      frameborder="2" style="border:2"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBnrNEvPPPDZBiQTEUK0FBb90OhGqYGv7Q
+        &q=<%= @user.street_address.parameterize %>" allowfullscreen>
+    </iframe>
   </div>
   <div class="col-md-6">
     <h2><b>Breeder: </b><%= @user.breeder_name %></h2>
@@ -16,7 +28,11 @@
   </div>
 </div>
 
+<br>
+
 <% if current_user == @user_id %>
 <%= link_to 'Edit', edit_user_path(@listing), class: "btn btn-default"  %> |
 <% end %>
 <%= link_to 'Back', users_path, class: "btn btn-default"  %>
+
+</div>

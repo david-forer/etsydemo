@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   
   resources :listings do
     resources :orders, only: [:new, :create, :show]
+      collection do
+          get 'search'
+      end
   end
 
   resources :users

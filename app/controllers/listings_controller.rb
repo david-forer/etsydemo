@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
   before_action :check_user, only:[:edit, :update, :destroy]
 
+
   def seller
     @listings =Listing.where(user: current_user).order("created_at DESC")
   end
@@ -12,6 +13,15 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all.order("created_at DESC")
   end
+
+  def search
+    if params[:search].present?
+      @listings = Listing.search(params[:search])
+    else
+      @listings = Listing.all
+    end
+  end
+
 
   # GET /listings/1
   # GET /listings/1.json
