@@ -139,3 +139,45 @@
     padding-top: 70px;
 
   }
+
+  .puppy {
+    padding-top: 70px;
+  }
+
+  .center-block {
+    float:none;
+  }
+
+  .chat-container {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 140px;
+    width: 80;
+    color: black;
+  }
+  .message-container {
+    .form-control {
+      float: left;
+      width: 80%;
+      height: 100px;
+      border: 2px solid black;
+    }
+    .btn {
+      float:right;
+      position:relative;
+      height: 54px !important;
+      width: 18%;
+    }
+  }
+  .message {
+    padding-left: 25px;
+    padding-top: 10px;
+  }
+
+  .messages {
+    border: 2px solid #383131;
+    height: 16em;
+    position: relative;
+    overflow: auto;
+  }

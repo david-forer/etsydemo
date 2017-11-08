@@ -1,0 +1,24 @@
+
+
+    <h1 class = "center"><b>Puppy Chat</b></h1>
+    <br>
+    <br>
+
+        <div class = "row chat-container">
+            <div class = "col-md-8 center-block">
+                <div class = "messages" id="messages">
+                    <%= render @messages %>
+            </div>
+            <hr />
+            <div class = "message-container">
+
+            <%= form_for(@message, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+            <%= f.text_area :content, class: "form-control", placeholder: "Say Something Witty Here!" %>
+            <br>
+            <%= f.submit "Submit Message", class: "btn btn-primary" %>
+            <br>
+            <% end %>
+            </div>
+            </div>
+        </div>
+

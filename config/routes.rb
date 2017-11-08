@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'chatrooms/show'
+
   devise_for :users
   
   resources :listings do
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
           get 'search'
       end
   end
-
+  get 'chat' => 'chatrooms#show'
   resources :users
   get 'pages/about'
   get 'pages/contact'
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
   get 'sales' => "orders#sales"
   get 'purchases' => "orders#purchases"
   get 'users' => "users#index"
+
+  resources :messages, only: [:create, :show]
 
   root 'pages#home'
 
