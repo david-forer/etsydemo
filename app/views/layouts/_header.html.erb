@@ -10,7 +10,7 @@
 
 					<ul class="nav navbar-nav navbar-right">
 							<li><%= link_to "About", pages_about_path, class:"btn btn-default" %> </li>
-            				<li><%= link_to "Contact", pages_contact_path, class:"btn btn-default" %> </li>
+            				<li><%= link_to "Contact", new_contact_path, class:"btn btn-default" %> </li>
 
 						<% if user_signed_in? %>
 						<li><%= link_to "Chat Room", chat_path, class:"btn btn-default"%> </li>

@@ -24,6 +24,8 @@ gem 'stripe'
 gem 'searchkick'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate'
+gem 'mail_form'
+gem 'sendgrid-ruby'
 
 
 group :development, :test do

@@ -1,0 +1,40 @@
+<div class = "container lower">
+
+<h1 class = "center"> Say Hello to Us </h1>
+<br>
+<br>
+
+    <div class = "skinny_wrapper wrapper_padding">
+
+        <%= form_for @contact do |f| %>
+
+            <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, required: true, class: "form-control" %>
+            </div>
+
+            <br>
+            <div class="form-group">
+            <%= f.label :email %>
+            <%= f.text_field :email, required: true, class: "form-control" %>
+            </div>
+
+            <br>
+            <div class="form-group">
+            <%= f.label :message %>
+            <%= f.text_area :message, as: :text, class: "form-control" %>
+            </div>
+
+            <div class= "hidden">
+            <%= f.label :nickname %>
+            <%= f.text_field :nickname, hint: 'leave this field blank' %>
+            </div>
+            
+            <div class="form-group">
+            <%= f.submit 'Send Message', class: 'bt btn-default' %>
+            </div>
+
+            <% end %>
+
+    </div>
+</div>

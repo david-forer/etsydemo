@@ -1,11 +1,13 @@
+<div class = "container lower">
+
 <h1> Our Breeders</h1>
 
-<h3> All of our breeers are listed below.</h3>
+<h3> All of our Breeders are listed below.</h3>
+<br>
+<br>
 
 <div class="center">
-  <div align="center">
-    <%= will_paginate %>
-  </div>
+  
     <div class="row">
         <% @users.each do |user| %>
         <% if user.Breeder %>
@@ -24,4 +26,11 @@
     <div align="center">
       <%= will_paginate %>
     </div>
+  <div class = "center">
+    <%= link_to 'Back', root_path, class: "btn btn-default"  %>
+  </div>
+</div>
+
+
+
 </div>
