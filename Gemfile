@@ -22,6 +22,8 @@ gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'stripe'
 gem 'searchkick'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate'
 
 
 group :development, :test do

@@ -23,14 +23,14 @@
   font-size: 4em;
   font-weight: bolder;
   padding-bottom: 0px;
-  padding-top: 150px;
+  padding-top: 180px;
   text-shadow: 2px 2px 15px #fdfdfd;
   
 }
 
 .main-h2 {
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.4);
   font-size: 2.75em;
   font-weight: bold;
   padding-bottom: 0px;
@@ -43,22 +43,31 @@
     font-family: Arial, Helvetica, sans-serif;
   }
  .navbar-default {
-    background-color: #e7e7e7;
-    opacity: 0.9;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.0);
+    z-index:10;
     margin-bottom: 0px;
-  }
+    top: 10px;
+    width: 100%;
+    border: 0;
+    }
  .navbar-default .navbar-brand {
     font-family: guardian-egyptt, georgia, serif;
     font-weight: 400;
-    color: #d5641c;
-    font-size: 40px;
+    color: #ff0000;
+    font-size: 20px;
+    padding-top: 0px;
   }
  .navbar-default .navbar-nav > li > a {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
-    color: #d5641c;
+    color: #050505;
   }
+  .navbar-header .navbar-brand {
+    padding-top: 0px;
+  }
+  .navbar .container { min-height: 70px; }
 
  .center {
     text-align: center;
@@ -88,9 +97,14 @@
 }
 .ddefr {
   background-image: url('https://static.pexels.com/photos/374906/pexels-photo-374906.jpeg');
-  background-size: 100% ;
+  /* Full height */
+  height: 100%; 
+  min-height: 800px;
+  top: -20px;
+  /* Center and scale the image */
+  background-position: center;
   background-repeat: no-repeat;
-  min-height:800px;
+  background-size: cover;
   
 }
 
@@ -180,4 +194,18 @@
     height: 16em;
     position: relative;
     overflow: auto;
+  }
+
+  .lower {
+    margin-top: 100px;
+  }
+
+  .alert {
+    margin-top: 75px;
+  }
+
+  .footer {
+    margin-top: 55px;
+    color: black;
+    align-content: center;
   }

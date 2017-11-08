@@ -9,4 +9,5 @@ class Listing < ApplicationRecord
 
     belongs_to :user
     has_many :orders
+    has_many :comments, dependent: :destroy
 end

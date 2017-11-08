@@ -1,5 +1,5 @@
 
-<div class = "container puppy">
+<div class = "container puppy lower">
 
 <div class="row">
   <div class="col-md-8">
@@ -16,6 +16,42 @@
   <div class="center">
   <%= link_to "Buy it Now", new_listing_order_path(@listing), class: "btn btn-default", data: {turbolink: false} %>
     </div>
+<!--comments section goes here -->
+
+    <% if signed_in? %>
+      <div class="row">
+        <div class="comment-form">
+          <h3>Comments: </h3>
+          <hr />
+          <%= form_for([@listing, @comment], :html => {class: "form-horizontal", role: "form"}) do |f| %>
+            <div class="form-group">
+            
+                <%= f.text_area :description, rows: 4, class: "form-control", placeholder: "Enter Comment Here" %>
+            </div>
+            <div class="form-group">
+              <div class="center">
+                <%= f.submit "Submit Comment", class: "btn btn-default" %>
+              </div>
+            </div>
+          <% end %>
+          <hr />
+        </div>
+      </div>
+    <% end %>
+
+    <% if @listing.comments != 0 %>
+      <div class="row">
+        <h3>Prior Comments: </h3>
+            <div id="messages">
+              <%= render partial: 'comments/comments', object: @comments %>
+            </div>
+        </div>
+      <% else %>
+      <div class="row">
+        <h3>No Comments Yet!</h3>
+        </div>
+    <% end %>
+
   </div>
 </div>
 <br>

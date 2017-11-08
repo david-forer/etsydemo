@@ -3,6 +3,9 @@
 <h3> All of our breeers are listed below.</h3>
 
 <div class="center">
+  <div align="center">
+    <%= will_paginate %>
+  </div>
     <div class="row">
         <% @users.each do |user| %>
         <% if user.Breeder %>
@@ -17,5 +20,8 @@
           </div>
         </div>
       <% end %>
+    </div>
+    <div align="center">
+      <%= will_paginate %>
     </div>
 </div>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       collection do
           get 'search'
       end
+    resources :comments, only: [:create, :show]
   end
   get 'chat' => 'chatrooms#show'
   resources :users
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
   resources :messages, only: [:create, :show]
 
   root 'pages#home'
+
+  mount ActionCable.server => '/cable'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
