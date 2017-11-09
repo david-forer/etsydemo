@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+   <title>Dog Selling Demo</title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://js.stripe.com/v3/" %>
+    <%= csrf_meta_tags %>
+    <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
+  </head>
   <body>
+  <div class = "container lower center">
     <%= yield %>
+  </div>
   </body>
 </html>

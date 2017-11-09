@@ -1,32 +1,39 @@
-<div class = "container lower">
+<div class = "container center lower">
 
-<h2><%= @order[:address] %></h2>
-<h2><%= @listing %></h2>
-<h2><%= @listing.name %></h2>
-<h2><%= @listing.price %></h2>
+<h1> Please Confirm Your Details Below: </h1>
 
-    <div class="center">
-         <%= link_to "Buy it Now", new_listing_order_path(:listing_id), class: "btn btn-default", data: {turbolink: false} %>
-    </div>
-        
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $<%= @listing.price %></span>
-    </label>
-  </article>
-    <input type='hidden' name='amount' value="<%= @listing.price.to_i * 100 %>">
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Buy this dog!"
-          data-email=<%= current_user.email %>
-          data-amount="<%= @listing.price.to_i * 100 %>"
-          data-locale="auto">
-    </script>
-<% end %>
+<div class="row">
+  <div class="col-sm-6">
+      <h2><%= @order[:address] %></h2>
+      <h2><%= @order[:city] %></h2>
+      <h2><%= @order[:state] %></h2>
+      <h2><%= @listing.name %></h2>
+      <h2><%= @listing.price %></h2>
+  </div>
+
+  <div class="col-sm-6">   
+    <br>
+    <br>
+    <br>     
+        <%= form_tag charges_path do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+            <label class="amount">
+              <span>Amount: $<%= @listing.price %></span>
+            </label>
+          </article>
+            <input type='hidden' name='amount' value="<%= @listing.price.to_i * 100 %>">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Buy this dog!"
+                  data-email=<%= current_user.email %>
+                  data-amount="<%= @listing.price.to_i * 100 %>"
+                  data-locale="auto">
+            </script>
+        <% end %>
+  </div>
 </div>
