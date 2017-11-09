@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :listings do
-    resources :orders, only: [:new, :create, :show]
+    resources :orders, only: [:new, :create, :show, :confirmation]
       collection do
           get 'search'
       end
     resources :comments, only: [:create, :show]
+    
   end
   get 'chat' => 'chatrooms#show'
   resources :users
@@ -29,6 +30,10 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
   resources :contacts, only: [:create, :new]
+
+  post '/confirmation' => "orders#confirmation"
+
+  resources :charges
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -10,6 +10,12 @@ class OrdersController < ApplicationController
     @orders = Order.all.where(buyer: current_user).order("created_at DESC")
   end
 
+  def confirmation
+    # byebug
+    @order = params[:order]
+    @listing = Listing.find(params[:order][:listing_id])
+  end
+
   
   # GET /orders/new
   def new
@@ -32,20 +38,29 @@ class OrdersController < ApplicationController
     Stripe.api_key = ENV["STRIPE_API_KEY"]
     token = params[:stripeToken]
     begin
-      charge = Stripe::Charge.create(
-        :amount => (@listing.price * 100).floor,
-        :currency => "aud",
-        :description => "Charge for your new puppy",
-        :source => token,
-        )
-      flash[:notice] = "Thanks for ordering!"
-    rescue Stripe::CardError => e
-      flash[:danger] = e.message
-    end
+       # Amount in cents
+    @amount = params[:amount]
+  
+    customer = Stripe::Customer.create(
+      :email => params[:stripeEmail],
+      :source  => params[:stripeToken]
+    )
+  
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'usd'
+    )
+  
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to confirmation_path
+  end
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to root_url }
+        format.html { redirect_to confirmation_path }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
